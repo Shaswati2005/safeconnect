@@ -31,6 +31,10 @@ const config: Config = {
             10:'#F9F1F0',
             20:'#FDE2CB',
             30:'#FFBE98',
+           },
+
+           shadow:{
+            10: 'rgba(0, 0, 0, 0.45)'
            }
 
 
