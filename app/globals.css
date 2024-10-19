@@ -126,15 +126,19 @@ body {
 
   
   .btn_violet{
-    @apply border-violet-100 bg-violet-10 text-skin-10 px-8 py-5 hover:bg-violet-400
+    @apply border-violet-100 bg-violet-10 text-skin-10 px-20 py-5 hover:bg-violet-400
   }
 
   .btn_white{
-    @apply border-skin-10  bg-skin-10 text-violet-10 px-8 py-5 hover:bg-skin-20
+    @apply border-violet-10  bg-skin-10 text-violet-10 px-5 py-2 hover:bg-violet-100
   }
 
   .btn_blue{
     @apply border-blue-10 bg-blue-10 text-skin-10 px-8 py-5 hover:bg-blue-300
+  }
+
+  .shadow{
+    box-shadow: rgba(166, 30, 250, 0.45) 0px 25px 20px -20px;
   }
 
   
