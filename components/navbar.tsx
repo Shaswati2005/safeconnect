@@ -17,7 +17,8 @@ const Navbar = () => {
               {link.label}
             </Link>
             
-          ))}</ul>
+          ))}
+          </ul>
 
    </nav>
   )
