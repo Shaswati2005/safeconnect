@@ -1,8 +1,10 @@
+'use client'
+
 import { useState, ChangeEvent } from "react";
 import { auth, googleProvider } from "../config/firebase";
 import { createUserWithEmailAndPassword, signInWithPopup, AuthError } from "firebase/auth";
 
-const Auth = () => {
+export default function Auth() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
