@@ -6,6 +6,7 @@ import { NAV_LINKS } from "@/constants";
 const Navbar = () => {
   return (
     <nav className=" bg-violet-10 lg:rounded-bl-5xl  lg:rounded-br-5xl flexBetween max-container px-6 z-20  relative py-5">
+   
       <Link href="/">
         <h3 className="capitalise font-bold-18 text-skin-10 ">safe connect</h3>
       </Link>
