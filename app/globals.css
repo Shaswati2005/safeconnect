@@ -125,16 +125,16 @@ body {
   }
 
   
-  .btn_pastel_brown{
-    @apply border-brown-30 bg-brown-30 text-skin-20 
+  .btn_violet{
+    @apply border-x-violet-100 bg-violet-10 text-skin-10
   }
 
-  .btn_red_brown{
-    @apply border-brown-20  bg-brown-20 text-skin-20 
+  .btn_white{
+    @apply border-skin-10  bg-skin-10 text-violet-10 
   }
 
-  .btn_brown{
-    @apply border-brown-10 bg-brown-10 text-skin-20 
+  .btn_blue{
+    @apply border-blue-10 bg-blue-10 text-skin-10
   }
 
   

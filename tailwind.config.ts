@@ -9,21 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-           brown:{
-            10:'#A77370',
-            20:'#C87377',
-            30:'#D38F8F',
+           blue:{
+            10:'#bec6fe',
+            20:'#afe3f9',
+            
 
            },
 
-           orange:{
-            10:'#F39883',
-            20:'#F5AC95'
+           pink:{
+            10:'#f8a4f3',
+
+           },
+
+           violet:{
+            10:'#ba71fe',
+            
 
            },
 
            skin:{
-            10:'#FEE6C4',
+            10:'#F9F1F0',
             20:'#FDE2CB',
             30:'#FFBE98',
            }
