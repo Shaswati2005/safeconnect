@@ -1,9 +1,13 @@
 import React from 'react'
 import Button from './Button'
+import Navbar from './navbar'
 
 
 const Hero = () => {
   return (
+    <>
+
+    <Navbar/>
     <section className='w-screen h-full padding-container flex flex-1 flex-col gap-20 xl:gap-30 py-10  lg:py-18'>
 
       <div className='w-full flexflexBetween flex-row'>
@@ -15,7 +19,7 @@ const Hero = () => {
 
         </div>
 
-        <div className='w-full flex flex-1 flex-col lg:flex-row gap-15 lg:gap-20'>
+        <div className='w-full flex flex-1 flex-col py-10 lg:py-20 lg:flex-row gap-15 lg:gap-20'>
           <Button
           
           type='button'
@@ -28,6 +32,7 @@ const Hero = () => {
         </div>
 
     </section>
+    </>
   )
 }
 
