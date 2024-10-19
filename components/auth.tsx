@@ -1,115 +1,260 @@
 'use client';
 
-import { useState, ChangeEvent } from 'react';
-import { auth, googleProvider } from '../config/firebase'; // Adjust import path as per your project structure
+import { useState, ChangeEvent, useEffect } from 'react';
+import { auth, googleProvider, db } from '../config/firebase'; // Ensure the path is correct
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { doc, setDoc, getDoc } from 'firebase/firestore'; // Firestore imports
 
 export default function Auth() {
-  // States for user input
+  const [isSignUp, setIsSignUp] = useState<boolean>(true); // Toggle between Sign Up and Sign In
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [isSignUp, setIsSignUp] = useState<boolean>(true); // To toggle between sign-up and sign-in
-  const [error, setError] = useState<string | null>(null); // Error state
+  const [parentName, setParentName] = useState<string>(''); // Parent's name
+  const [childName, setChildName] = useState<string>(''); // Child's name
+  const [phoneNumber, setPhoneNumber] = useState<string>(''); // Parent's phone number
+  const [childDob, setChildDob] = useState<string>(''); // Child's date of birth
+  const [userData, setUserData] = useState<any>(null); // To store user data fetched from Firestore
 
   // Handling input changes
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
+  const handleParentNameChange = (e: ChangeEvent<HTMLInputElement>) => setParentName(e.target.value);
+  const handleChildNameChange = (e: ChangeEvent<HTMLInputElement>) => setChildName(e.target.value);
+  const handlePhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => setPhoneNumber(e.target.value);
+  const handleChildDobChange = (e: ChangeEvent<HTMLInputElement>) => setChildDob(e.target.value);
 
   // Sign up function with Firebase
   const handleSignUp = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      console.log('User signed up successfully');
-      setError(null); // Clear error if successful
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // After creating user, store extra information in Firestore
+      const userDocRef = doc(db, 'users', user.uid); // Create a document with the user's UID
+      await setDoc(userDocRef, {
+        parentName,
+        childName,
+        phoneNumber,
+        childDob,
+        email: user.email,
+      });
+
+      console.log('User signed up and additional info stored in Firestore');
+      fetchUserData(user.uid); // Fetch user data after sign-up
+
     } catch (err: any) {
       console.error('Error during sign-up: ', err.message);
-      setError(err.message); // Display the error
     }
   };
 
   // Sign in function with Firebase
   const handleSignIn = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      console.log('User signed in successfully');
-      setError(null); // Clear error if successful
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Fetch user data after sign-in
+      fetchUserData(user.uid);
+
+      console.log('User signed in with email and password');
     } catch (err: any) {
       console.error('Error during sign-in: ', err.message);
-      setError(err.message); // Display the error
     }
   };
 
-  // Sign in with Google
+  // Fetch user data from Firestore
+  const fetchUserData = async (userId: string) => {
+    try {
+      const userDocRef = doc(db, 'users', userId);
+      const userDoc = await getDoc(userDocRef);
+
+      if (userDoc.exists()) {
+        setUserData(userDoc.data());
+        console.log('User data fetched:', userDoc.data());
+      } else {
+        console.log('No such document!');
+      }
+    } catch (err) {
+      console.error('Error fetching user data: ', err);
+    }
+  };
+
+  // Sign up or sign in with Google
   const signInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      const userCredential = await signInWithPopup(auth, googleProvider);
+      const user = userCredential.user;
+
+      // After Google sign-in, store extra information if it's a sign-up
+      if (isSignUp) {
+        const userDocRef = doc(db, 'users', user.uid); // Create a document with the user's UID
+        await setDoc(userDocRef, {
+          parentName,
+          childName,
+          phoneNumber,
+          childDob,
+          email: user.email,
+        });
+
+        console.log('Google user signed up and additional info stored in Firestore');
+      }
+
+      fetchUserData(user.uid); // Fetch user data after sign-up/sign-in
+
       console.log('User signed in with Google');
-      setError(null); // Clear error if successful
     } catch (err: any) {
       console.error('Error during Google sign-in: ', err.message);
-      setError(err.message); // Display the error
     }
   };
 
-  // Toggle between sign-up and sign-in forms
-  const toggleAuthMode = () => setIsSignUp((prev) => !prev);
-
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
+    <div style={styles.container}>
       <h1>{isSignUp ? 'Sign Up' : 'Sign In'}</h1>
+
+      {isSignUp && (
+        <>
+          <div>
+            <input
+              type="text"
+              placeholder="Parent's Name"
+              value={parentName}
+              onChange={handleParentNameChange}
+              style={styles.input}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Child's Name"
+              value={childName}
+              onChange={handleChildNameChange}
+              style={styles.input}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Parent's Phone Number"
+              value={phoneNumber}
+              onChange={handlePhoneNumberChange}
+              style={styles.input}
+            />
+          </div>
+          <div>
+            <input
+              type="date"
+              placeholder="Child's Date of Birth"
+              value={childDob}
+              onChange={handleChildDobChange}
+              style={styles.input}
+            />
+          </div>
+        </>
+      )}
+
       <div>
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={handleEmailChange}
-          style={{ marginBottom: '10px', padding: '8px', width: '80%' }}
+          style={styles.input}
         />
-        <br />
+      </div>
+      <div>
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={handlePasswordChange}
-          style={{ marginBottom: '10px', padding: '8px', width: '80%' }}
+          style={styles.input}
         />
-        <br />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
 
-      {isSignUp ? (
-        <button
-          onClick={handleSignUp}
-          style={{ marginBottom: '10px', padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', cursor: 'pointer' }}
-        >
-          Sign Up with Email
+      <button
+        onClick={isSignUp ? handleSignUp : handleSignIn}
+        style={styles.button}
+      >
+        {isSignUp ? 'Sign Up' : 'Sign In'}
+      </button>
+
+      <div style={styles.googleButtonContainer}>
+        <button onClick={signInWithGoogle} style={styles.googleButton}>
+          Sign {isSignUp ? 'Up' : 'In'} with Google
         </button>
-      ) : (
-        <button
-          onClick={handleSignIn}
-          style={{ marginBottom: '10px', padding: '10px 20px', backgroundColor: 'blue', color: 'white', border: 'none', cursor: 'pointer' }}
-        >
-          Sign In with Email
-        </button>
+      </div>
+
+      <div style={styles.toggleContainer}>
+        <p onClick={() => setIsSignUp(!isSignUp)} style={styles.toggleText}>
+          {isSignUp ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
+        </p>
+      </div>
+
+      {/* Display fetched user data */}
+      {userData && (
+        <div style={styles.userDataContainer}>
+          <h3>User Info</h3>
+          <p>Parent's Name: {userData.parentName}</p>
+          <p>Child's Name: {userData.childName}</p>
+          <p>Phone Number: {userData.phoneNumber}</p>
+          <p>Child's Date of Birth: {userData.childDob}</p>
+          <p>Email: {userData.email}</p>
+        </div>
       )}
-
-      <div>
-        <button
-          onClick={signInWithGoogle}
-          style={{ marginBottom: '10px', padding: '10px 20px', backgroundColor: '#4285F4', color: 'white', border: 'none', cursor: 'pointer' }}
-        >
-          Sign In with Google
-        </button>
-      </div>
-
-      <div>
-        <button
-          onClick={toggleAuthMode}
-          style={{ padding: '10px 20px', backgroundColor: 'gray', color: 'white', border: 'none', cursor: 'pointer' }}
-        >
-          {isSignUp ? 'Switch to Sign In' : 'Switch to Sign Up'}
-        </button>
-      </div>
     </div>
   );
 }
+
+// Styles for the component
+const styles: React.CSSProperties = {
+  container: {
+    padding: '20px',
+    textAlign: 'center',
+    backgroundColor: '#f9f9f9',
+    borderRadius: '10px',
+    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+    maxWidth: '400px',
+    margin: '0 auto',
+  },
+  input: {
+    marginBottom: '10px',
+    padding: '10px',
+    width: '80%',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+  },
+  button: {
+    padding: '10px 20px',
+    marginTop: '10px',
+    cursor: 'pointer',
+    backgroundColor: '#007BFF',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+  },
+  googleButtonContainer: {
+    marginTop: '20px',
+  },
+  googleButton: {
+    padding: '10px 20px',
+    cursor: 'pointer',
+    backgroundColor: '#DB4437',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+  },
+  toggleContainer: {
+    marginTop: '20px',
+  },
+  toggleText: {
+    cursor: 'pointer',
+    color: '#007BFF',
+  },
+  userDataContainer: {
+    marginTop: '20px',
+    textAlign: 'left' as const, // Updated type assertion
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    padding: '10px',
+  },
+};
