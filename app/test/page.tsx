@@ -2,20 +2,10 @@
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import axios from "axios";
-import { NextResponse } from "next/server";
+
 import { useState } from "react";
 
 const page = () => {
-  const visitedURLs: string[] = [];
-
-  window.addEventListener("hashchange", () => {
-    const currentURL = window.location.href;
-    if (!visitedURLs.includes(currentURL)) {
-      visitedURLs.push(currentURL);
-      console.log(currentURL);
-      localStorage.setItem("visitedURLs", JSON.stringify(visitedURLs));
-    }
-  });
   const [value, setValue] = useState("No data gotten");
   const [prompt, setPrompt] = useState("What are you");
 
@@ -51,13 +41,10 @@ const page = () => {
           );
         }}
       ></input>
-      <button onClick={getResponse}>Fetch</button>
+      <button onClick={getResponse} className="h-fit w-fit bg-blue-500 ">
+        Fetch
+      </button>
       <p>{value}</p>
-      <ul>
-        {visitedURLs.map((url) => (
-          <li>{url}</li>
-        ))}
-      </ul>
     </div>
   );
 };
