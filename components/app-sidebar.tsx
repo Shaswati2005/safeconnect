@@ -55,7 +55,7 @@ export default function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/dashboard" style={{ color: "blue" }}>
+                  <Link href="/dashboard">
                     <Image
                       src={"/home.svg"}
                       alt="home icon"
