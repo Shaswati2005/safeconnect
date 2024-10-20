@@ -38,7 +38,7 @@ const chartConfig = {
 
 export default function Component() {
   return (
-    <Card className="w-[500px]">
+    <Card className="w-[350px] lg:w-[500px] ">
       <CardHeader>
         <CardTitle>Bar Chart</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
