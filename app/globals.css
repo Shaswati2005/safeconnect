@@ -109,32 +109,22 @@ body {
     @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
   }
 
-  
-  .btn_violet{
-    @apply border-violet-100 bg-violet-10 text-skin-10 px-20 py-5 hover:bg-violet-400
+  .btn_violet {
+    @apply border-violet-100 bg-violet-10 text-skin-10 px-20 py-5 hover:bg-violet-400;
   }
 
-  .btn_white{
-    @apply border-violet-10  bg-skin-10 text-violet-10 px-5 py-2 hover:bg-violet-100
+  .btn_white {
+    @apply border-violet-10  bg-skin-10 text-violet-10 px-5 py-2 hover:bg-violet-100;
   }
 
-  .btn_blue{
-    @apply border-blue-10 bg-blue-10 text-skin-10 px-8 py-5 hover:bg-blue-300
+  .btn_blue {
+    @apply border-blue-10 bg-blue-10 text-skin-10 px-8 py-5 hover:bg-blue-300;
   }
 
-  .shadow{
+  .shadow {
     box-shadow: rgba(166, 30, 250, 0.45) 0px 25px 20px -20px;
   }
-
-  
-
-  
-
-
 }
-
-
-
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
@@ -173,12 +163,12 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 271 98.6% 72%;
+    --sidebar-foreground: 7 42.9% 95.9%;
+    --sidebar-primary: 201 63.6% 80.6%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 271 98.6% 72%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }

@@ -44,18 +44,18 @@ const items = [
 
 export default function AppSidebar() {
   return (
-    <Sidebar className="bg-violet-10">
+    <Sidebar>
       <SidebarHeader />
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-skin-10"style={{ fontSize: 32 }}>
-            SafeConnect
+        <SidebarGroup className="flex flex-col gap-8">
+          <SidebarGroupLabel style={{ fontSize: 32 }}>
+            <h1>SafeConnect</h1>
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/dashboard">
+                  <Link href="/dashboard" className="text-xl">
                     <Image
                       src={"/home.svg"}
                       alt="home icon"
@@ -68,10 +68,9 @@ export default function AppSidebar() {
                 </SidebarMenuButton>
               </SidebarMenuItem>
 
-
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/chatbox">
+                  <Link href="/chatbox" className="text-xl">
                     <Image
                       src={"/alerts.svg"}
                       alt="chat icon"
@@ -79,15 +78,14 @@ export default function AppSidebar() {
                       width={32}
                       color={"skin-10"}
                     />
-                    Intelligent chat interface
+                    AI Mitra
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
 
-
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/alerts">
+                  <Link href="/alerts" className="text-xl">
                     <Image
                       src={"/alerts2.svg"}
                       alt="alert2 icon"
@@ -102,7 +100,7 @@ export default function AppSidebar() {
 
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/notification">
+                  <Link href="/notification" className="text-xl">
                     <Image
                       src={"/notification.svg"}
                       alt="noitification icon"
@@ -117,7 +115,7 @@ export default function AppSidebar() {
 
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/dashboard">
+                  <Link href="/dashboard" className="text-xl">
                     <Image
                       src={"/setting.svg"}
                       alt="setting icon"
@@ -129,10 +127,6 @@ export default function AppSidebar() {
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-
-
-
-
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

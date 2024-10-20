@@ -8,6 +8,9 @@ import { useState } from "react";
 const page = () => {
   const [value, setValue] = useState("No data gotten");
   const [prompt, setPrompt] = useState("What are you");
+  const [phone, setPhone] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [status, setStatus] = useState<string>("");
 
   const getResponse = async () => {
     try {
@@ -45,6 +48,32 @@ const page = () => {
         Fetch
       </button>
       <p>{value}</p>
+      <div>
+        <h1>Send WhatsApp Message</h1>
+        <form onSubmit={() => {}}>
+          <div>
+            <label>Phone Number:</label>
+            <input
+              type="text"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="+123456789"
+              required
+            />
+          </div>
+          <div>
+            <label>Message:</label>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Your message here..."
+              required
+            />
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+        {status && <p>{status}</p>}
+      </div>
     </div>
   );
 };
