@@ -8,7 +8,7 @@ const Hero = () => {
     <>
 
     <Navbar/>
-    <section className='w-screen h-full padding-container flex flex-1 flex-col gap-20 xl:gap-30 py-10  lg:py-18'>
+    <section className='w-screen h-screen padding-container px-5 lg:px-20 flex flex-1 flex-col gap-20 xl:gap-30 py-10  lg:py-18'>
 
       <div className='w-full flexflexBetween flex-row'>
         <div className=' w-full  h-[75%]  md:-right-28 xl:-top-60'>

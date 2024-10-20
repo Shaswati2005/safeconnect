@@ -9,6 +9,13 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+
+
+		utilities: {
+			hideDropdownIcon: 'hidden',
+		  },
+
+		
   		colors: {
   			blue: {
   				'10': '#bec6fe',

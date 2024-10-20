@@ -3,6 +3,8 @@ import { Sidebar } from 'lucide-react'
 import React from 'react'
 
 const page = () => {
+    
+
   return (
     <section className='w-screen h-screen flex flex-col items-center justify-between bg-skin-10 '>
         <div className='w-fit h-[25px] lg:h-[50px] flex flex-row text-sm lg:text-2xl lg:mx-[30px] text-skin-10 gap-3 lg:gap-10 items-center justify-center bg-violet-10  rounded-5xl px-7 lg:px-20 mt-2 lg:mt-5 hover:cursor-pointer shadow-2xl shadow-violet-10'>

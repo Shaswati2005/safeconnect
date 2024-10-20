@@ -120,6 +120,7 @@ export default function Auth() {
               value={parentName}
               onChange={handleParentNameChange}
               style={styles.input}
+              
             />
           </div>
           <div>
