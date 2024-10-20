@@ -1,4 +1,4 @@
-import Danger from "@/components/Danger";
+
 import Sidebar from "@/components/Sidebaar";
 import React from "react";
 

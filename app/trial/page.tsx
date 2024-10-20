@@ -18,9 +18,9 @@ const page = () => {
       <div className='flex flex-row w-full h-full '>
         <Sidebaar/>
         <div className='h-full flex flex-col flex-1 items-center justify-between gap-5 lg:gap-10 px-3 lg:px-5 py-5 lg:py-10 overflow-scroll'>
-          <div className=' flex flex-row flex-1 items-center justify-between '>
+          <div className=' flex flex-row flex-wrap flex-1 items-center justify-center '>
 
-          <div className='flex-1 px-4 lg:px-10 py-3 lg:py-6'>
+          <div className=' flex-1 px-4 lg:px-10 py-3 lg:py-6 align-middle'>
         <Component></Component>
 
         </div>
@@ -32,7 +32,15 @@ const page = () => {
 
           </div>
 
+
+          <div className='flex flex-row flex-wrap flex-1 items-center justify-center '>
+
+          </div>
+
         </div>
+
+
+        
         
 
         
