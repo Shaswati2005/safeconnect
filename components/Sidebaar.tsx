@@ -6,14 +6,14 @@ const Sidebaar = () => {
   return (
     <section className='w-[250px] h-full hidden lg:flex  lg:items-start lg:justify-start bg-violet-10 '>
       <div className='w-full h-full flex flex-col items-start justify-start gap-4 px-5 py-10 '>
-        <div className='w-full h-fit flex flex-row items-center justify-start gap-2 text-skin-10 font-medium'>
+        <div className='w-full h-fit flex flex-row items-center justify-start gap-2 text-skin-10 font-medium '>
          <Image
-         src='/home.svg'
-         alt='home'
+         src='/profile.svg'
+         alt='profile'
          width={32}
          height={32}/>
 
-         <h1>home</h1>
+         <h1>profile</h1>
          <hr className='border-1 border-skin-10'/>
 
         </div>
@@ -34,24 +34,24 @@ const Sidebaar = () => {
 
         <div className='w-full h-fit flex flex-row items-center justify-start gap-2 text-skin-10 font-medium'>
          <Image
-         src='/home.svg'
-         alt='home'
+         src='/alerts.svg'
+         alt='alert'
          width={32}
          height={32}/>
 
-         <h1>home</h1>
+         <h1>alert</h1>
          <hr className='border-1 border-skin-10'/>
 
         </div>
 
         <div className='w-full h-fit flex flex-row items-center justify-start gap-2 text-skin-10 font-medium'>
          <Image
-         src='/home.svg'
-         alt='home'
+         src='/alerts2.svg'
+         alt='notification'
          width={32}
          height={32}/>
 
-         <h1>home</h1>
+         <h1>notification</h1>
          <hr className='border-1 border-skin-10'/>
 
         </div>
@@ -59,12 +59,12 @@ const Sidebaar = () => {
 
         <div className='w-full h-fit flex flex-row items-center justify-start gap-2 text-skin-10 font-medium'>
          <Image
-         src='/home.svg'
-         alt='home'
+         src='/setting.svg'
+         alt='setting'
          width={32}
          height={32}/>
 
-         <h1>home</h1>
+         <h1>settings</h1>
          <hr className='border-1 border-skin-10'/>
 
         </div>

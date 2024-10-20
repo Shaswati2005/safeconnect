@@ -21,18 +21,18 @@ import {
 export const description = "A bar chart"
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "January", alerts: 186 },
+  { month: "February",  alerts: 305 },
+  { month: "March",  alerts: 237 },
+  { month: "April",  alerts: 73 },
+  { month: "May",  alerts: 209 },
+  { month: "June",  alerts: 214 },
 ]
 
 const chartConfig = {
   desktop: {
-    label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    label: "alerts",
+    color: "var(--chart-2)",
   },
 } satisfies ChartConfig
 
@@ -40,7 +40,7 @@ export default function Component() {
   return (
     <Card className="w-[350px] lg:w-[500px] ">
       <CardHeader>
-        <CardTitle>Bar Chart</CardTitle>
+        <CardTitle>Alerts</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
@@ -58,16 +58,16 @@ export default function Component() {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={8} />
+            <Bar dataKey="alerts" fill="hsl( 271 98.6% 72%)" radius={8} />
           </BarChart>
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+          total alerts month wise  <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+          showing total number of unsafe websites visited by your child during last 6 month 
         </div>
       </CardFooter>
     </Card>

@@ -114,11 +114,11 @@ body {
   }
 
   .btn_white {
-    @apply border-violet-10  bg-white text-violet-10 w-fit h-fit px-10 py-5 hover:bg-violet-100;
+    @apply border-violet-400  bg-white text-violet-10 w-fit h-fit px-10 py-5 hover:bg-violet-100;
   }
 
   .btn_blue {
-    @apply border-blue-10 bg-blue-10 text-skin-10 w-fit h-fit px-10 py-5 hover:bg-blue-300;
+    @apply border-blue-600 bg-blue-500 text-skin-10 w-fit h-fit px-10 py-5 hover:bg-blue-400;
   }
 
   .shadow {
@@ -224,7 +224,7 @@ select::-ms-expand {
 
 @layer base {
   :root {
-    --chart-1: 12 76% 61%;
+    --chart-1:  271 98.6% 72%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
@@ -232,7 +232,7 @@ select::-ms-expand {
   }
 
   .dark {
-    --chart-1: 220 70% 50%;
+    --chart-1:  271 98.6% 72%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
