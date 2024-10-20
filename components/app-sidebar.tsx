@@ -44,7 +44,7 @@ const items = [
 
 export default function AppSidebar() {
   return (
-    <Sidebar>
+    <Sidebar variant="inset">
       <SidebarHeader />
       <SidebarContent>
         <SidebarGroup className="flex flex-col gap-8">
