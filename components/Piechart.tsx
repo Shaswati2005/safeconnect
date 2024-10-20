@@ -23,7 +23,7 @@ export const description = "A donut chart with text"
 
 const chartData = [
   { screentime: "on phone", visitors: 6, fill: "var(--color-chrome)" },
-  { withoutgadgates: "away from gadgates", visitors: 18 , fill: "var(--color-safari)" },
+  { screentime: "away from gadgates", visitors: 18 , fill: "var(--color-safari)" },
   
 ]
 

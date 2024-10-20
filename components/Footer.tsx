@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     
     <section className='w-[100vw] bg-violet-10 rounded-tl-5xl rounded-tr-5xl'>
-      <footer className="footer bg-base-300 text-base-content p-10">
+      <footer className="footer bg-violet-10 text-skin-10 p-10">
   <nav>
     <h6 className="footer-title">Services</h6>
     <a className="link link-hover">Branding</a>

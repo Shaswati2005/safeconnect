@@ -29,7 +29,7 @@ const Features = () => {
         <CarouselContent >
           <CarouselItem className="h-[200px]  lg:h-[400px] flex items-center justify-center">
             <Card className=" h-full  w-full max-w-[800px]  bg-blue-500 py-3 lg:py-7 px-8 lg:px-12 ">
-              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">AI Chatbot for your childs specific needs</CardHeader>
+              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">A comprehensive platform promoting children’s online safety, mental health, and digital wellbeing</CardHeader>
               <CardDescription className="text-sm lg:text-2xl font-normal text-skin-10 ">
                 Always there for you and your child whenever needed
               </CardDescription>
@@ -40,9 +40,11 @@ const Features = () => {
 
 
             <Card className="h-full  w-full max-w-[800px] bg-blue-500 py-3 lg:py-7 px-8 lg:px-12 flex items-center justify-center">
-              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">AI Chatbot for your childs specific needs</CardHeader>
+              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">AI-powered emotional check-ins.
+              </CardHeader>
               <CardDescription className="text-sm lg:text-2xl font-normal text-skin-10 ">
-                Always there for you and your child whenever needed
+              Parental insights into emotional trends.
+
               </CardDescription>
             </Card>
             </CarouselItem>
@@ -51,9 +53,10 @@ const Features = () => {
 
 
             <Card className=" h-full  w-full max-w-[800px] bg-blue-500 py-3 lg:py-7 px-8 lg:px-12 ">
-              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">AI Chatbot for your childs specific needs</CardHeader>
+              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">Real-time detection of harmful content.</CardHeader>
               <CardDescription className="text-sm lg:text-2xl font-normal text-skin-10 ">
-                Always there for you and your child whenever needed
+              Safe content recommendations for a positive digital experience.
+
               </CardDescription>
             </Card>
             </CarouselItem>
@@ -64,9 +67,10 @@ const Features = () => {
 
 
             <Card className=" h-full  w-full max-w-[800px] bg-blue-500 py-3 lg:py-7 px-8 lg:px-12 ">
-              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">AI Chatbot for your childs specific needs</CardHeader>
+              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">Digital Wellbeing Dashboard:
+              </CardHeader>
               <CardDescription className="text-sm lg:text-2xl font-normal text-skin-10 ">
-                Always there for you and your child whenever needed
+              Insights for parents on emotional and online behavior trends
               </CardDescription>
             </Card>
             </CarouselItem>
@@ -76,9 +80,9 @@ const Features = () => {
 
 
             <Card className="h-full  w-full max-w-[800px] bg-blue-500 py-3 lg:py-7 px-8 lg:px-12 ">
-              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">AI Chatbot for your childs specific needs</CardHeader>
+              <CardHeader className="text-xl lg:text-4xl font-semibold text-skin-10">Mindful Notifications & Alerts:</CardHeader>
               <CardDescription className="text-sm lg:text-2xl font-normal text-skin-10 ">
-                Always there for you and your child whenever needed
+              Smart notifications tailored to emotional states
               </CardDescription>
             </Card>
           
