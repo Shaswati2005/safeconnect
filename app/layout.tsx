@@ -3,9 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar";
-
-
-
+import usePageTracking from "@/hooks/usePageTracking";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,17 +26,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  usePageTracking;
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
-
-        
         {children}
-
-       
       </body>
     </html>
   );

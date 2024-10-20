@@ -3,7 +3,13 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import axios from "axios";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+interface HistoryData {
+  url: string;
+  title: string;
+  visitTime: number;
+}
 
 const page = () => {
   const [value, setValue] = useState("No data gotten");
@@ -31,6 +37,31 @@ const page = () => {
     console.log(result.response.text());
 
     setValue(result.response.text);
+  };
+
+  const sendHistoryData = async (page: HistoryData): Promise<void> => {
+    try {
+      const response = await fetch("http://localhost:3000/api/logHistory", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          url: page.url,
+          title: page.title,
+          visitTime: page.visitTime,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Success:", data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
