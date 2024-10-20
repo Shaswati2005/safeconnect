@@ -5,6 +5,7 @@ import Upbar from '@/components/Upbar'
 import Component from '@/components/Barchart'
 import Piet from '@/components/Piechart'
 import { Pie } from 'recharts'
+import Button from '@/components/Button'
 
 
 
@@ -33,10 +34,29 @@ const page = () => {
           </div>
 
 
-          <div className='flex flex-row flex-wrap flex-1 items-center justify-center '>
+          <div className='flex flex-row flex-wrap flex-1 items-center justify-center gap-20 '>
+
+            <Button
+            type='button'
+            title='AI Friend'
+            variant='btn_violet '/>
+
+
+             <Button
+            type='button'
+            title='Geolocation'
+            variant='btn_white'/>
+
+
+            <Button
+            type='button'
+            title='Alerts'
+            variant='btn_blue'/>
             
 
           </div>
+
+        
 
         </div>
 
