@@ -2,11 +2,12 @@
 
 import Link from 'next/link'
 import React from 'react'
+import { SignOutButton } from '@clerk/nextjs'
 
 const Sidebar = () => {
   return (
     <div className='h-screen w-[230px]  hidden md:block fixed left-0 top-0 bg-pink-100'>
-    <div className=' w-full h-full pb-5 flex  flex-col items-start pl-6  gap-10 bg-pink-100 shadow-lg text-lg font-medium pt-10  justify-between shadow-pink-100'>
+    <div className=' w-full h-full pb-9 flex  flex-col items-start pl-6  gap-10 bg-pink-100 shadow-lg text-lg font-medium pt-10  justify-between shadow-pink-100'>
         <div className='flex flex-col gap-10 '>
             <div className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
             <Link href={"#"}>
@@ -31,11 +32,8 @@ const Sidebar = () => {
 
         </div>
         </div>
-        <div>
-        <Link href={"#"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
-             logout
-            </Link>
-
+        <div className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+       <SignOutButton/>
         </div>
        
 

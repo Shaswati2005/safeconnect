@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut, Pie } from 'react-chartjs-2';
 import { title } from 'process';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const data = {
-  labels: ['Red', 'Blue', 'Yellow'],
+  labels: ['social', 'sleep', 'academics'],
   datasets: [
     {
-      label: '# of Votes',
+      label: 'points to improve',
       data: [300, 50, 100],
       backgroundColor: [
         'rgba(255, 99, 132, 0.8)',
@@ -35,16 +35,17 @@ const options = {
     },
     title:{
       display: true,
-      text: 'My Pie Chart',
+      text: 'Improvements',
 
     }
   },
+  cutout:'50%',
 };
 
 const PieChart: React.FC = () => {
   return (
     <div>
-      <h2>Pie Chart</h2>
+      <h2>Improvements Needed</h2>
       <Pie data={data} options={options} />
     </div>
   );

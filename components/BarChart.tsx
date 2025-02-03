@@ -80,9 +80,9 @@ const options = {
 
 const BarChart: React.FC = () => {
   return (
-    <div>
+    <div className='w-full h-fit max-w-[600px] px-2'>
       <h2>My Chart</h2>
-      <Bar data={data} options={options} className=' h-[400px] w-fit bg-pink-100 p-3 '/> 
+      <Bar data={data} options={options} className=' h-[100%] w-[80%] bg-blue-100  hover:shadow-2xl hover:shadow-blue-200 border rounded-2xl p-3 '/> 
     </div>
   );
 };
