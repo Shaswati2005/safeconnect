@@ -1,60 +1,47 @@
+"use client"
+
+import Link from 'next/link'
+import React from 'react'
+
 const Sidebar = () => {
-    return (
-      <>
-        <aside className="md:block hidden w-64 h-screen" aria-label="Sidenav">
-          <div className="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <span className="ml-3">Dashboard</span>
-                </a>
-              </li>
-              <li>
-                <button type="button" className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                  <span className="flex-1 ml-3 text-left whitespace-nowrap">AI help</span>
-                  <svg aria-hidden="true" className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg> 
-                </button>
-              </li>
-              <li>
-                <button type="button" className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-sales" data-collapse-toggle="dropdown-sales">
-                  <span className="flex-1 ml-3 text-left whitespace-nowrap">Sales</span>
-                  <svg aria-hidden="true" className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-              </li>
-              <li>
-                <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <span className="flex-1 ml-3 whitespace-nowrap">Emails</span>
-                  <span className="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full text-primary-800 bg-primary-100 dark:bg-primary-200 dark:text-primary-800">6</span>
-                </a>
-              </li>
-              <li>
-                <button type="button" className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-authentication" data-collapse-toggle="dropdown-authentication">
-                  <span className="flex-1 ml-3 text-left whitespace-nowrap">Analytics</span>
-                  <svg aria-hidden="true" className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-              </li>
-            </ul>
-            <ul className="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
-              <li>
-                <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
-                  <span className="ml-3">Calendar</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
-                  <span className="ml-3">Receipts</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
-                  <span className="ml-3">Settings</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </aside>
-      </>
-    )
-  }
-  
-  export default Sidebar;
+  return (
+    <div className='h-screen w-[230px]  hidden md:block fixed left-0 top-0 bg-pink-100'>
+    <div className=' w-full h-full pb-5 flex  flex-col items-start pl-6  gap-10 bg-pink-100 shadow-lg text-lg font-medium pt-10  justify-between shadow-pink-100'>
+        <div className='flex flex-col gap-10 '>
+            <div className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <Link href={"#"}>
+            profile
+            </Link>
+
+            </div>
+        
+        <div className='flex flex-col items-start gap-4 '>
+            <Link href={"/dashboard"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            Dashboard
+            </Link>
+            <Link href={"/test"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+             Take test
+            </Link>
+            <Link href={"#"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+             Suggestions
+            </Link>
+            <Link href={"#"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+             settings
+            </Link>
+
+        </div>
+        </div>
+        <div>
+        <Link href={"#"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+             logout
+            </Link>
+
+        </div>
+       
+
+    </div>
+    </div>
+  )
+}
+
+export default Sidebar

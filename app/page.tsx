@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Link from "next/link";
 
 
+
 export default function Home() {
   return (
     <div className="w-full h-full px-4 py-y bg-blue-100">
@@ -30,8 +31,7 @@ export default function Home() {
       
 
         </div>
-      
-      
+
 
       </div>
       <div>
