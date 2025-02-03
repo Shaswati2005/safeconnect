@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import { Button } from "@heroui/react";
 import About from "@/components/About";
 import Link from "next/link";
 
