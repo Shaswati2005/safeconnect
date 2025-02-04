@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { SignOutButton } from '@clerk/nextjs'
+import { MdSpaceDashboard } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
 
 
@@ -17,16 +18,16 @@ const Sidebar = () => {
     <div className=' w-full h-full pb-9 flex  flex-col items-start pl-6  gap-10 bg-pink-100 shadow-lg text-lg font-medium pt-10  justify-between shadow-pink-100'>
         <div className='flex flex-col gap-10 '>
             <div className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <Link href={"/profile"} className='flex flex-row items-center justify-start gap-4'>
             <FaRegUserCircle />
-            <Link href={"/profile"}>
-            
             profile
             </Link>
 
             </div>
         
         <div className='flex flex-col items-start gap-4 '>
-            <Link href={"/dashboard"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <Link href={"/dashboard"} className='flex flex-row items-center justify-start gap-4 h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <MdSpaceDashboard />
             Dashboard
             </Link>
             <Link href={"/test"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
