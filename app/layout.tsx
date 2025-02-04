@@ -9,6 +9,7 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
+import Footer from "@/components/Footer";
 
 
 const geistSans = localFont({
@@ -38,6 +39,8 @@ export default function RootLayout({
       <html lang="en">
         <body>
           {children}
+          
+         
         </body>
       </html>
     </ClerkProvider>

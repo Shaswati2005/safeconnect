@@ -1,15 +1,21 @@
+"use client"
+
+
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import About from "@/components/About";
 import Link from "next/link";
+import Faqs from "@/components/Faqs";
+import Footer from "@/components/Footer";
 
 
 
 export default function Home() {
   return (
-    <div className="w-full h-full px-4 py-y bg-blue-100">
+    <div className="w-full h-full  py-y bg-blue-100">
       <Navbar/>
-      <div className="flex flex-col justify-between lg:flex-row gap-20 py-20 items-center lg:gap-40 lg:px-20">
+      <div className="flex flex-col gap-25 items-center justify-start">
+      <div className="flex flex-row items-center justify-between flex-wrap gap-20 py-20  lg:gap-40 lg:px-20">
       <Image src={'/home-bg.png'} alt='home' width={450} height={500} className="bg-pink-50 border rounded-full shadow-lg shadow-pink-100"/>
       <div className="flex flex-col gap-10">
         <div>
@@ -41,6 +47,17 @@ export default function Home() {
       </div>
 
       <About/>
+
+      <div className="pt-10  flex flex-col items-center justify-between gap-10">
+        <h2 className="font-bold text-3xl text-pink-400 hover:scale-105 transition all border p-5 rounded-xl hover:shadow-xl hover:shadow-pink-200 bg-pink-100">Frequently Asked Questions</h2>
+      <Faqs question="afjafa aetaetaewta gagfawrawt" answer="lorem /lorem ahuaraerawruth      aeruaeofbaigag         riawhobafaweogae    awaiothawotiabgkajbog awriawoethaowtgaoga gaoireaoieiwigbagfoawe eaoiroatheawgfakegio faoirhaoefbaoifnaowea oairhaotehaotnta oariaoethrafoaei" />
+
+      </div>
+
+      </div>
+
+     <Footer/>
+     
       
       
     </div>

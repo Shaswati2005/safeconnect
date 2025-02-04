@@ -29,20 +29,14 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Home",
+    "About us",
+    "Faqs",
+    "signup/login"
   ];
 
   return (
-  
+   <div className="px-4">
     <Navbar onMenuOpenChange={setIsMenuOpen} className="border rounded-full bg-pink-300 border-pink-400 shadow-2xl shadow-pink-300 text-pink-950  ">
       <NavbarContent>
         <NavbarMenuToggle
@@ -62,7 +56,7 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link aria-current="page" href="/About">
+          <Link aria-current="page" href="#">
             about us
           </Link>
         </NavbarItem>
@@ -99,6 +93,8 @@ export default function App() {
         ))}
       </NavbarMenu>
     </Navbar>
+
+    </div>
     
   );
 }
