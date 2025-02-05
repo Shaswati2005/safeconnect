@@ -23,7 +23,6 @@
     "@radix-ui/react-tooltip": "^1.1.3",
     "@tabler/icons-react": "^3.29.0",
     "@types/chart.js": "^2.9.41",
-    "@types/firebase": "^3.2.3",
     "@types/react-chartjs-2": "^2.0.2",
     "axios": "^1.7.7",
     "chart.js": "^4.4.7",
@@ -47,6 +46,7 @@
     "twilio": "^5.3.4"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^15.1.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -56,5 +56,9 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a nextjs app which helps children stay safe online",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
