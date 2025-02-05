@@ -7,10 +7,9 @@ import {
   SignInButton,
   SignedIn,
   SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+  UserButton,
+} from "@clerk/nextjs";
 import Footer from "@/components/Footer";
-
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,17 +32,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={process.env.CLERK_SECRET_KEY}>
       <html lang="en">
-        <body>
-          {children}
-          
-         
-        </body>
+        <body>{children}</body>
       </html>
     </ClerkProvider>
-  
   );
 }
