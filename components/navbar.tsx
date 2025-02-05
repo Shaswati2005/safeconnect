@@ -51,7 +51,7 @@ export default function App() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link  href="#">
             home
           </Link>
         </NavbarItem>
@@ -61,7 +61,7 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link  href="#">
             faqs
           </Link>
         </NavbarItem>
@@ -81,11 +81,8 @@ export default function App() {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className="w-full"
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
+             
               href="#"
-              size="lg"
             >
               {item}
             </Link>

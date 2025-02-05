@@ -5,6 +5,10 @@ import React from 'react'
 import { SignOutButton } from '@clerk/nextjs'
 import { MdSpaceDashboard } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
+import { SiCodeforces } from "react-icons/si";
+import { BsChatDots } from "react-icons/bs";
+import { PiSignOutBold } from "react-icons/pi";
+import { IoMdSettings } from "react-icons/io";
 
 
 const Sidebar = () => {
@@ -30,19 +34,24 @@ const Sidebar = () => {
             <MdSpaceDashboard />
             Dashboard
             </Link>
-            <Link href={"/test"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <Link href={"/test"} className=' flex flex-row items-center justify-start gap-4 h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <SiCodeforces />
+            
              Take test
             </Link>
-            <Link href={"/chat"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <Link href={"/chat"} className='flex flex-row items-center justify-start gap-4 h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <BsChatDots />
              Suggestions
             </Link>
-            <Link href={"/profile"} className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <Link href={"/profile"} className='flex flex-row items-center justify-start gap-4 h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+            <IoMdSettings />
              settings
             </Link>
 
         </div>
         </div>
-        <div className='h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+        <div className='flex flex-row items-center justify-start gap-4 h-fit px-4 py-2 hover:border hover:rounded-xl w-[180px] hover:shadow-xl hover:shadow-pink-200 hover:scale-105 transition-all'>
+        <PiSignOutBold />
        <SignOutButton/>
         </div>
        
